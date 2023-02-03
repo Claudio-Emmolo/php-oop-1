@@ -31,10 +31,10 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo  "Anno: {$avatar->year} || Durata: {$avatar->duration}";
         echo '</p>';
         echo "Genere:";
-        foreach ($avatar->genre as $key => $item) {
+        foreach ($avatar->genre->genre as $item) {
             echo '<ul>';
             echo '<li>';
-            var_dump($item);
+            echo ($item);
             echo '</li>';
             echo '</ul>';
         }
@@ -49,10 +49,10 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo  "Anno: {$licenzaDiUccidere->year} || Durata: {$licenzaDiUccidere->duration}";
         echo '</p>';
         echo "Genere:";
-        foreach ($licenzaDiUccidere->genre as $key => $item) {
+        foreach ($licenzaDiUccidere->genre->genre as $item) {
             echo '<ul>';
             echo '<li>';
-            var_dump($item);
+            echo ($item);
             echo '</li>';
             echo '</ul>';
         }
