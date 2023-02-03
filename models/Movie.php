@@ -26,5 +26,3 @@ class Movie
         return $this->bannerPath;
     }
 }
-
-var_dump($genre);
