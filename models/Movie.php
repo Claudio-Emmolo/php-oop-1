@@ -17,6 +17,3 @@ class Movie
         $this->genre = $_genre;
     }
 }
-
-$gino = new Movie('#', 'blabla', '2003', '1:03h', 'fantasy'); //For test - To remove
-var_dump($gino); //For test - To remove
