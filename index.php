@@ -19,7 +19,7 @@ include_once __DIR__ . '/./db/db.php';
 
     <main>
         <?php
-        foreach ($filmList as $key => $film) {
+        foreach ($filmList as $film) {
             echo '<article>';
             echo  "<img src='{$film->defaultImgPath()}' alt=''>";
             echo '<h1>';
