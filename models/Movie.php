@@ -6,9 +6,9 @@ class Movie
     public $title;
     public $year;
     public $duration;
-    public $genre = [];
+    public $genre;
 
-    public function __construct($_bannerPath, $_title, $_year, $_duration, $_genre)
+    public function __construct($_bannerPath, $_title, $_year, $_duration, Genre $_genre)
     {
         $this->bannerPath = $_bannerPath;
         $this->title = $_title;
@@ -26,3 +26,5 @@ class Movie
         return $this->bannerPath;
     }
 }
+
+var_dump($genre);

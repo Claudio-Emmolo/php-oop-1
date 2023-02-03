@@ -1,9 +1,12 @@
 <?php
 require_once __DIR__ . './models/Movie.php';
+require_once __DIR__ . './models/Genre.php';
+
+$array = ['bla', 'bla', 'bla'];
 
 //Create new object
-$avatar = new Movie('https://news.cinecitta.com/photo.aspx?s=1&w=850&path=%2fpublic%2farticles%2f0091%2f91023%2favvy.jpeg', 'Avatar', '2009', '2h 42m', ['Fantasy', 'Sci-Fi', 'Azione']);
-$licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ', '1h 50m', ['Spionaggio', 'Azione', 'Avventura']);
+$avatar = new Movie('https://news.cinecitta.com/photo.aspx?s=1&w=850&path=%2fpublic%2farticles%2f0091%2f91023%2favvy.jpeg', 'Avatar', '2009', '2h 42m', new Genre(['Fantasy', 'Sci-Fi', 'Azione']));
+$licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ', '1h 50m', new Genre(['Spionaggio', 'Azione', 'Avventura']));
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +31,10 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo  "Anno: {$avatar->year} || Durata: {$avatar->duration}";
         echo '</p>';
         echo "Genere:";
-        foreach ($avatar->genre as $key) {
+        foreach ($avatar->genre as $key => $item) {
             echo '<ul>';
             echo '<li>';
-            echo $key;
+            var_dump($item);
             echo '</li>';
             echo '</ul>';
         }
@@ -46,10 +49,10 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo  "Anno: {$licenzaDiUccidere->year} || Durata: {$licenzaDiUccidere->duration}";
         echo '</p>';
         echo "Genere:";
-        foreach ($licenzaDiUccidere->genre as $key) {
+        foreach ($licenzaDiUccidere->genre as $key => $item) {
             echo '<ul>';
             echo '<li>';
-            echo $key;
+            var_dump($item);
             echo '</li>';
             echo '</ul>';
         }
