@@ -2,7 +2,7 @@
 require_once __DIR__ . './models/Movie.php';
 
 //Create new object
-$avatar = new Movie('#', 'Avatar', '2009', '2h 42m', 'fantasy');
+$avatar = new Movie('https://news.cinecitta.com/photo.aspx?s=1&w=850&path=%2fpublic%2farticles%2f0091%2f91023%2favvy.jpeg', 'Avatar', '2009', '2h 42m', 'fantasy');
 $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ', '1h 50m', 'Azione');
 ?>
 
@@ -20,7 +20,7 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
     <main>
         <?php
         echo '<article>';
-        echo  "<img src='{$avatar->bannerPath}' alt=''>";
+        echo  "<img src='{$avatar->defaultImgPath()}' alt=''>";
         echo '<h1>';
         echo  $avatar->title;
         echo '</h1>';
@@ -30,7 +30,7 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo '</article>';
 
         echo '<article>';
-        echo  "<img src='{$licenzaDiUccidere->bannerPath}' alt=''>";
+        echo  "<img src='{$licenzaDiUccidere->defaultImgPath()}' alt=''>";
         echo '<h1>';
         echo  $licenzaDiUccidere->title;
         echo '</h1>';

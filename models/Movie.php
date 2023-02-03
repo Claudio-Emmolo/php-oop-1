@@ -16,4 +16,13 @@ class Movie
         $this->duration = $_duration;
         $this->genre = $_genre;
     }
+
+    public function defaultImgPath()
+    {
+        if ($this->bannerPath == '#') {
+            return $this->bannerPath = 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png';
+        } else {
+            return $this->bannerPath = $this->bannerPath;
+        }
+    }
 }
