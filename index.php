@@ -2,8 +2,8 @@
 require_once __DIR__ . './models/Movie.php';
 
 //Create new object
-$avatar = new Movie('https://news.cinecitta.com/photo.aspx?s=1&w=850&path=%2fpublic%2farticles%2f0091%2f91023%2favvy.jpeg', 'Avatar', '2009', '2h 42m', 'fantasy');
-$licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ', '1h 50m', 'Azione');
+$avatar = new Movie('https://news.cinecitta.com/photo.aspx?s=1&w=850&path=%2fpublic%2farticles%2f0091%2f91023%2favvy.jpeg', 'Avatar', '2009', '2h 42m', ['Fantasy', 'Sci-Fi', 'Azione']);
+$licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ', '1h 50m', ['Spionaggio', 'Azione', 'Avventura']);
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +25,16 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo  $avatar->title;
         echo '</h1>';
         echo '<p>';
-        echo  "Anno: {$avatar->year} || Durata: {$avatar->duration} || Genere: {$avatar->genre}";
+        echo  "Anno: {$avatar->year} || Durata: {$avatar->duration}";
         echo '</p>';
+        echo "Genere:";
+        foreach ($avatar->genre as $key) {
+            echo '<ul>';
+            echo '<li>';
+            echo $key;
+            echo '</li>';
+            echo '</ul>';
+        }
         echo '</article>';
 
         echo '<article>';
@@ -35,8 +43,16 @@ $licenzaDiUccidere = new Movie('#', 'Agente 007 - Licenza di uccidere', '1962 ',
         echo  $licenzaDiUccidere->title;
         echo '</h1>';
         echo '<p>';
-        echo  "Anno: {$licenzaDiUccidere->year} || Durata: {$licenzaDiUccidere->duration} || Genere: {$licenzaDiUccidere->genre}";
+        echo  "Anno: {$licenzaDiUccidere->year} || Durata: {$licenzaDiUccidere->duration}";
         echo '</p>';
+        echo "Genere:";
+        foreach ($licenzaDiUccidere->genre as $key) {
+            echo '<ul>';
+            echo '<li>';
+            echo $key;
+            echo '</li>';
+            echo '</ul>';
+        }
         echo '</article>';
         ?>
     </main>
