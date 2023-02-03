@@ -20,9 +20,9 @@ class Movie
     public function defaultImgPath()
     {
         if ($this->bannerPath == '#') {
-            return $this->bannerPath = 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png';
-        } else {
-            return $this->bannerPath = $this->bannerPath;
+            $this->bannerPath = 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Image_not_available.png';
         }
+
+        return $this->bannerPath;
     }
 }
